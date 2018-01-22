@@ -9,7 +9,7 @@ getcoverage <- function(bambedObj, mapqthres) {
     readlength <- rep(NA, nrow(sampname))
     for (i in 1:nrow(sampname)) {
         bamurl <- bamdir[i]
-        which <- RangesList(quack = IRanges(st - 10000, ed + 10000))
+        which <- IRangesList(quack = IRanges(st - 10000, ed + 10000))
         names(which) <- as.character(chr)
         what <- c("pos", "mapq", "qwidth")
         flag <- scanBamFlag(isDuplicate = FALSE, isUnmappedQuery = FALSE,

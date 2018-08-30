@@ -40,8 +40,9 @@ If you've any questions regarding the software, please don't hesitate emailing u
 Install the current release from Bioconductor:
 <<install1, eval=FALSE>>=
 ## try http:// if https:// URLs are not supported
-source("https://bioconductor.org/biocLite.R")
-biocLite("CODEX")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("CODEX")
 @
 Install the devel version from GitHub:
 <<install2, eval=FALSE>>=
